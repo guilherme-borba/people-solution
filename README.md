@@ -1,6 +1,6 @@
 # PeopleSolution
 
-Projeto para **cadastro e gerenciamento de pessoas**, com interface desktop (WPF) conectada a uma API REST hospedada no Azure.
+Projeto para cadastro e gerenciamento de pessoas, com interface desktop (WPF) conectada a uma API hospedada no Azure.
 
 ---
 
@@ -8,7 +8,7 @@ Projeto para **cadastro e gerenciamento de pessoas**, com interface desktop (WPF
 
 📁 FinishedExecutable: Instalador do aplicativo WPF (conectado à nuvem)
 
-📁 People.Api: Código-fonte da API ASP.NET publicada no Azure
+📁 People.Api: Código-fonte da API .NET publicada no Azure
 
 📁 People.Wpf: Código-fonte da aplicação desktop (WPF)
 
@@ -42,8 +42,9 @@ A aplicação permite:
 | Camada       | Tecnologia                           |
 |--------------|---------------------------------------|
 | Interface    | WPF (.NET)                            |
-| Backend      | ASP.NET Core Web API                  |
+| Backend      | .NET Web API                          |
 | Hospedagem   | Azure App Service                     |
+| Banco de dados| SQLite                               |
 | Linguagem    | C#                                    |
 | IDE          | Visual Studio 2022                    |
 | Versão .NET  | .NET 8                               |
@@ -56,7 +57,7 @@ A aplicação permite:
 
 1. Acesse a pasta `FinishedExecutable`
 2. Execute o instalador `.exe`
-3. O aplicativo será instalado e aberto automaticamente
+3. O aplicativo será instalado, em seguida de um duplo clique para abri-lo
 
 > A conexão com a API já está configurada para funcionar com o endereço da nuvem.
 
@@ -67,7 +68,7 @@ A aplicação permite:
 - Preencha os campos: `Nome`, `Sobrenome`, `Telefone`
 - Clique em **Salvar** para cadastrar
 - Clique em **Novo** para limpar o formulário
-- Selecione um registro da tabela para:
+- Selecione um registro da tabela:
   - Mude os campos e clique em Salvar
   - Ou botão Excluir
 
