@@ -1,0 +1,13 @@
+.vs/
+*.user
+*.suo
+
+bin/
+obj/
+publish/
+Output/
+PeopleInstaller/
+
+*.db
+
+*.log

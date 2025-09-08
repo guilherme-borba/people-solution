@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "People.Api", "People.Api\People.Api.csproj", "{A85ACD55-FEC5-4D81-971D-9052E2296D33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "People.Wpf", "People.Wpf\People.Wpf.csproj", "{607463B4-3FF6-4DBA-AD36-670BCFF3F4B8}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PeopleInstaller", "PeopleInstaller\PeopleInstaller.vdproj", "{CCEC75FC-DB28-9C46-F194-E55B6E6A88C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A85ACD55-FEC5-4D81-971D-9052E2296D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A85ACD55-FEC5-4D81-971D-9052E2296D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A85ACD55-FEC5-4D81-971D-9052E2296D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A85ACD55-FEC5-4D81-971D-9052E2296D33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{607463B4-3FF6-4DBA-AD36-670BCFF3F4B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{607463B4-3FF6-4DBA-AD36-670BCFF3F4B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{607463B4-3FF6-4DBA-AD36-670BCFF3F4B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{607463B4-3FF6-4DBA-AD36-670BCFF3F4B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCEC75FC-DB28-9C46-F194-E55B6E6A88C4}.Debug|Any CPU.ActiveCfg = Debug
+		{CCEC75FC-DB28-9C46-F194-E55B6E6A88C4}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34227C54-8C9D-4884-BB01-D00A1FF48034}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+EndGlobal

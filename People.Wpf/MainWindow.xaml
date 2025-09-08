@@ -1,0 +1,112 @@
+﻿<Window
+    x:Class="People.Wpf.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Pessoas - WPF" Height="520" Width="820"
+    Icon="Assets/users_person_people.ico">
+
+    <Window.Resources>
+        <!-- Estilo hover, só para os botões Atualizar e Novo -->
+        <Style TargetType="Button" x:Key="AtualizarNovoButtonStyle" BasedOn="{StaticResource SecondaryButton}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource SecondaryHoverBrush}" />
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="{StaticResource PrimaryBrush}" Padding="16">
+            <DockPanel LastChildFill="True">
+                <TextBlock Text="Lista de Pessoas" Style="{StaticResource TitleText}" DockPanel.Dock="Left"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Right">
+                    <TextBlock Text="API:" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <TextBox x:Name="ApiUrlText" Width="300" Text="http://127.0.0.1:5151" Margin="0,0,8,0"/>
+                    <Button Content="Atualizar" Click="Refresh_Click" Style="{StaticResource AtualizarNovoButtonStyle}"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+        <!-- Tabela -->
+        <DataGrid x:Name="PeopleGrid"
+              Grid.Row="1" Grid.Column="0"
+              AutoGenerateColumns="False" IsReadOnly="True"
+              SelectionMode="Single" SelectionChanged="PeopleGrid_SelectionChanged">
+            <!-- Centralizar verticalmente todo conteúdo das células -->
+            <DataGrid.Resources>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Padding" Value="8,0,8,0"/>
+                </Style>
+
+                <!-- Texto: à esquerda e centralizado -->
+                <Style x:Key="CellTextLeftCentered" TargetType="TextBlock">
+                    <Setter Property="Margin" Value="8,0,0,0"/>
+                    <Setter Property="TextAlignment" Value="Left"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+                </Style>
+
+                <Style x:Key="CellEditLeftCentered" TargetType="TextBox">
+                    <Setter Property="TextAlignment" Value="Left"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Padding" Value="0"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Visibility="Collapsed"/>
+
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"
+                            ElementStyle="{StaticResource CellTextLeftCentered}"
+                            EditingElementStyle="{StaticResource CellEditLeftCentered}"/>
+
+                <DataGridTextColumn Header="Sobrenome" Binding="{Binding Sobrenome}" Width="*"
+                            ElementStyle="{StaticResource CellTextLeftCentered}"
+                            EditingElementStyle="{StaticResource CellEditLeftCentered}"/>
+
+                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" Width="*"
+                            ElementStyle="{StaticResource CellTextLeftCentered}"
+                            EditingElementStyle="{StaticResource CellEditLeftCentered}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Formulário -->
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="12,12,0,0">
+            <TextBlock Text="Cadastro" Style="{StaticResource SectionTitle}"/>
+            <TextBlock Text="Nome" Style="{StaticResource FieldLabel}"/>
+            <TextBox x:Name="NomeBox"/>
+
+            <TextBlock Text="Sobrenome" Style="{StaticResource FieldLabel}"/>
+            <TextBox x:Name="SobrenomeBox"/>
+
+            <TextBlock Text="Telefone" Style="{StaticResource FieldLabel}"/>
+            <TextBox x:Name="TelefoneBox" Margin="0,0,0,12"/>
+
+            <UniformGrid Rows="1" Columns="3" HorizontalAlignment="Stretch" Margin="10">
+                <Button Content="Novo" Click="Novo_Click" 
+            Style="{StaticResource AtualizarNovoButtonStyle}" 
+            Margin="5" MinWidth="60"/>
+                <Button Content="Salvar" Click="Salvar_Click" 
+            Style="{StaticResource PrimaryButton}" 
+            Margin="5" MinWidth="60"/>
+                <Button Content="Excluir" Click="Excluir_Click" 
+            Style="{StaticResource DangerButton}" 
+            Margin="5" MinWidth="60"/>
+            </UniformGrid>
+        </StackPanel>
+
+    </Grid>
+</Window>

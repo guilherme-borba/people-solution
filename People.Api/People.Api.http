@@ -1,0 +1,40 @@
+@host = http://localhost:5151
+
+### Listar pessoas
+GET {{host}}/api/people
+Accept: application/json
+
+###
+
+### Buscar pessoa por ID
+GET {{host}}/api/people/00000000-0000-0000-0000-000000000000
+Accept: application/json
+
+###
+
+### Criar nova pessoa
+POST {{host}}/api/people
+Content-Type: application/json
+
+{
+  "nome": "George",
+  "sobrenome": "Orwell",
+  "telefone": "41999999999"
+}
+
+###
+
+### Atualizar pessoa
+PUT {{host}}/api/people/00000000-0000-0000-0000-000000000000
+Content-Type: application/json
+
+{
+  "nome": "Victor",
+  "sobrenome": "Hugo",
+  "telefone": "41988888888"
+}
+
+###
+
+### Deletar pessoa
+DELETE {{host}}/api/people/00000000-0000-0000-0000-000000000000
